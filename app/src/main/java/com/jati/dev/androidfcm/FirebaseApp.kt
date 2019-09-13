@@ -1,8 +1,9 @@
-package com.jati.dev.androidfirebase
+package com.jati.dev.androidfcm
 
 import android.app.Application
+import android.content.Intent
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.jati.dev.androidfirebase.utils.VersionChecker
+import com.jati.dev.androidfcm.utils.VersionChecker
 
 /**
  * Created by Jati on 19/11/18.

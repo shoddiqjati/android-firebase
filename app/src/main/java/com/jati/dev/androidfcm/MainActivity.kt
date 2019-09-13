@@ -1,11 +1,12 @@
-package com.jati.dev.androidfirebase
+package com.jati.dev.androidfcm
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.util.Log
 import com.google.firebase.iid.FirebaseInstanceId
-import com.jati.dev.androidfirebase.utils.VersionChecker
+import com.google.firebase.messaging.FirebaseMessaging
+import com.jati.dev.androidfcm.utils.VersionChecker
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), VersionChecker.OnUpdateNeededListener {
@@ -16,9 +17,7 @@ class MainActivity : AppCompatActivity(), VersionChecker.OnUpdateNeededListener 
         checkAppVersion()
 
         VersionChecker.with(this).onUpdateNeeded(this).check()
-        FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
-            Log.d("fcmToken", it.result?.token)
-        }
+        FirebaseMessaging.getInstance().subscribeToTopic("all")
     }
 
     private fun checkAppVersion() {

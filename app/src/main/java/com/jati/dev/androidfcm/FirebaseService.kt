@@ -1,4 +1,4 @@
-package com.jati.dev.androidfirebase
+package com.jati.dev.androidfcm
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -8,7 +8,7 @@ class FirebaseService : FirebaseMessagingService() {
 
     override fun onMessageReceived(p0: RemoteMessage?) {
         super.onMessageReceived(p0)
-        Log.d("fcmMessage", p0?.toString())
+        Log.d("fcmMessage", p0.toString())
     }
 
     override fun onNewToken(p0: String?) {

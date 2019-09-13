@@ -1,4 +1,4 @@
-package com.jati.dev.androidfirebase
+package com.jati.dev.androidfcm
 
 import org.junit.Test
 
